@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'microposts/destroy'
-
-  get 'microposts/create'
-
-  get 'microposts/destr'
-
-  root to: 'toppages#index'
+  root to: 'tasks#index'
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -13,8 +7,7 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   
-  resources :users, only: [:index, :show, :new, :create]
-  resources :microposts, only: [:create, :destroy]
+  resources :users
   resources :tasks
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
